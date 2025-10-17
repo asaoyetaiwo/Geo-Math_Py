@@ -3,12 +3,16 @@
 # Import the required libraries
 import numpy as np
 from math import exp, sqrt
+import matplotlib.pyplot as plt
 
 # Input the required parameters for the problem
 
-upper_b = input(float('Enter the upper class boundary:'))
-lower_b = input(float('Enter the lower class bpondary:'))
-h = input(float('Enter the step size:'))
+upper_bb = input('Enter the upper class boundary:')
+upper_b = float(upper_bb)
+lower_bb = input('Enter the lower class bpondary:')
+lower_b = float(lower_bb)
+h = input('Enter the step size:')
+h = float(h)
 N = int((upper_b - lower_b) / h)
 x = np.zeros(N)
 y = np.zeros(N)
@@ -22,7 +26,6 @@ for i in range(1, N):
     y[i] = y[i - 1] + h * (exp(x[i - 1]) - y[i - 1])
 
 print(x,y)
-import matplotlib.pyplot as plt
 plt.plot(x, y, color ='red')
 plt.xlabel('x')
 plt.title('Solution of the Differential Equation')
