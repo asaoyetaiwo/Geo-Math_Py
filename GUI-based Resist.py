@@ -7,7 +7,7 @@ import numpy as np
 from tkinter import Tk, filedialog, simpledialog, messagebox
 import os
 # Creating a class for data collection, export and filtering
-class GeoResistivitySurvey:
+class Geo_ResistSurvey:
     def __init__(self):
         self.data = pd.DataFrame(columns=["AB/2", "MN/2", "Resistance", "Current"])
         self.filtered_data = None
@@ -20,7 +20,7 @@ class GeoResistivitySurvey:
             resistance = simpledialog.askfloat("Input", "Enter Resistance:")
             current = simpledialog.askfloat("Input", "Enter Current:")
             self.data = pd.concat([self.data, pd.DataFrame([[ab2, mn2, resistance, current]], columns=self.data.columns)], ignore_index=True)
-            cont = messagebox.askyesno("Continue?", "Do you want to add more data?")
+            cont = messagebox.askyesno("Continue?", "You wan add more data?")
             if not cont:
                 break
     # Data export to file
@@ -73,7 +73,7 @@ class GeoResistivitySurvey:
         fil0e_path = filedialog.asksaveasfilename(defaultextension=".png", filetypes=[("PNG files", "*.png")])
         if file_path:
             self.fig.savefig(file_path)
-            messagebox.showinfo("Export", "Graph exported successfully!")
+            messagebox.showinfo("Dey wii me, baba", "Graph exported successfully!")
 
     def run(self):
         root = Tk()
@@ -96,8 +96,7 @@ class GeoResistivitySurvey:
             elif choice == "7":
                 break
             else:
-                messagebox.showerror("Error", "You fit start all over", "Invalid choice!!")
-
+                messagebox.showerror("Error", "You gas to start all over baba, you sef don try"
 if __name__ == "__main__":
-    app = GeoResistivitySurvey()
-    app.run() 
+    app = Geo_ResistSurvey()
+    app.run()
